@@ -4,6 +4,10 @@
 /*yellow*/
 /* Mixins */
 /* Elements principaux de la page */
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Montserrat", sans-serif;
   color: #000000;
@@ -17,7 +21,7 @@ body {
   margin: auto;
 }
 
-h1 {
+h1, h2 {
   font-family: "Bebas Neue", cursive;
   color: #000000;
 }
@@ -30,12 +34,13 @@ a {
   background-color: #000000;
   color: #ffffff;
   font-weight: 600;
-  padding: 15px 30px;
+  text-align: center;
+  padding: 15px 10px;
   border-radius: 10px;
   text-transform: uppercase;
   display: block;
   margin: 30px auto 10px auto;
-  width: 90px;
+  width: 120px;
   transition: all 500ms;
 }
 .button:hover {
@@ -47,7 +52,7 @@ nav {
   background-color: #000000;
   position: fixed;
   width: 100%;
-  height: 40px;
+  height: 50px;
   top: 0px;
   left: 0px;
   z-index: 2;
@@ -68,7 +73,7 @@ nav ul li {
 nav ul li a {
   color: #ffffff;
   border-bottom: 2px solid #000000;
-  padding: 10px;
+  padding: 15px;
 }
 nav ul li a:hover {
   border-color: #ffd350;
@@ -106,7 +111,7 @@ nav ul li a:hover {
   background-color: #ffd350;
   padding: 60px 10px;
 }
-.recipes-section h1 {
+.recipes-section h2 {
   font-size: 60px;
   text-align: center;
   margin: 0px auto 60px auto;
@@ -115,6 +120,7 @@ nav ul li a:hover {
 .categories-box {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row;
   justify-content: space-around;
   padding-bottom: 20px;
 }
@@ -157,7 +163,6 @@ nav ul li a:hover {
   margin: auto;
 }
 .contact-section h2 {
-  font-family: "Bebas Neue", cursive;
   font-size: 50px;
   margin: 0px;
 }
@@ -181,14 +186,7 @@ nav ul li a:hover {
 .contact-form_name-mail {
   display: flex;
 }
-.contact-form_name {
-  width: 300px;
-  margin: 5px;
-  border: solid 2px #000000;
-  font-family: "Montserrat", sans-serif;
-  outline: 0;
-}
-.contact-form_mail {
+.contact-form_name, .contact-form_mail {
   width: 300px;
   margin: 5px;
   border: solid 2px #000000;
@@ -202,6 +200,86 @@ nav ul li a:hover {
   border: solid 2px #000000;
   font-family: "Montserrat", sans-serif;
   outline: 0;
+}
+
+/* Footer Section */
+footer {
+  background-color: #000000;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 10px;
+  font-size: 12px;
+}
+
+/* PAGE INDEX RECETTES */
+.recipes-title {
+  padding-top: 50px;
+}
+.recipes-title h1 {
+  text-align: center;
+  font-size: 60px;
+}
+
+.recipes-index {
+  padding: 20px 40px;
+}
+.recipes-index h2 {
+  font-size: 40px;
+  text-align: left;
+}
+.recipes-index .categories-box {
+  justify-content: flex-start;
+}
+
+.recipe-preview {
+  margin-right: 40px;
+  overflow: visible;
+}
+.recipe-preview_image {
+  width: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  height: 300px;
+  border-radius: 50%;
+  width: 300px;
+  overflow: hidden;
+}
+.recipe-preview_title {
+  color: #000000;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* PAGE RECETTE */
+.recipe-title {
+  text-align: center;
+  padding: 70px 0 20px 0;
+  font-size: 50px;
+}
+
+.color-bloc {
+  margin: auto;
+  width: 90%;
+  background-color: #ffd350;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+.color-bloc_recipe-image {
+  width: 400px;
+  border-radius: 20px;
+  position: relative;
+  top: 50px;
+  left: 50px;
+}
+
+.recipe-details {
+  background-color: #ffffff;
+  width: 400px;
+  padding: 10px;
+  border: solid 2px #000000;
+  position: absolute;
 }
 
 /*# sourceMappingURL=style.css.map */

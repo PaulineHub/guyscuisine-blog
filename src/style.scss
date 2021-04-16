@@ -18,9 +18,18 @@ $paragraph-font: 'Montserrat', sans-serif;
 	outline: 0;
 }
 
+@mixin circle {
+	height: 300px;
+	border-radius: 50%;
+	width: 300px;
+	overflow: hidden;
+}
 
 /* Elements principaux de la page */
 
+* {
+	box-sizing: border-box;
+}
 
 body
 {
@@ -37,7 +46,7 @@ body
 	margin: auto;
 }
 
-h1
+h1, h2
 {
 	font-family: $title-font;
 	color: $primary-color;
@@ -53,12 +62,13 @@ a
 	background-color: $primary-color;
 	color: $secondary-color;
 	font-weight: 600;
-	padding: 15px 30px;
+	text-align: center;
+	padding: 15px 10px;
 	border-radius: 10px;
 	text-transform: uppercase;
 	display: block;
 	margin: 30px auto 10px auto;
-	width: 90px;
+	width: 120px;
 	transition: all 500ms;
 
 	&:hover {
@@ -73,7 +83,7 @@ nav {
 	background-color: $primary-color;
 	position: fixed;
 	width: 100%;
-	height: 40px;
+	height: 50px;
 	top: 0px;
 	left: 0px;
 	z-index: 2;
@@ -94,7 +104,7 @@ nav {
 			a {
 				color: $secondary-color;
 				border-bottom: 2px solid $primary-color;
-				padding: 10px;
+				padding: 15px;
 
 				&:hover {
 					border-color: $third-color;
@@ -146,7 +156,7 @@ nav {
 	background-color: $third-color;
 	padding: 60px 10px;
 
-	h1 {
+	h2 {
 		font-size: 60px;
 		text-align: center;
 		margin: 0px auto 60px auto;
@@ -157,16 +167,14 @@ nav {
 {
 	display: flex;
 	flex-wrap: wrap;
+	flex-direction: row;
 	justify-content: space-around;
 	padding-bottom: 20px;
 }
 
 .recipe-categorie
 {
-	height: 300px;
-	border-radius: 50%;
-	width: 300px;
-	overflow: hidden;
+	@include circle;
 	text-align: center;
 	background: black;
 
@@ -209,7 +217,6 @@ nav {
 	margin: auto;
 	
 	h2{
-		font-family: $title-font;
 		font-size: 50px;
 		margin: 0px;
 	}
@@ -241,12 +248,7 @@ nav {
 		display: flex;
 	}
 
-	&_name {
-		width: 300px;
-		@include form-box;
-	}
-
-	&_mail {
+	&_name, &_mail {
 		width: 300px;
 		@include form-box;
 	}
@@ -256,4 +258,95 @@ nav {
 		height: 100px;
 		@include form-box;
 	}
+}
+
+/* Footer Section */
+
+footer {
+	background-color: $primary-color;
+	color: $secondary-color;
+	display: flex;
+	justify-content: space-between;
+	padding: 5px 10px;
+	font-size: 12px;
+}
+
+
+/* PAGE INDEX RECETTES */
+
+
+.recipes-title {
+	padding-top: 50px;
+
+	h1 {
+		text-align: center;
+		font-size: 60px;
+	}
+}
+
+.recipes-index {
+	padding: 20px 40px;
+
+	h2 {
+		font-size: 40px;
+		text-align: left;
+	}
+
+	.categories-box {
+		justify-content: flex-start;
+	}
+}
+
+.recipe-preview {
+	
+	margin-right: 40px;
+	overflow: visible;
+
+	&_image {
+		
+		width: 100%;
+		border-radius: 50%;
+		overflow: hidden;
+		@include circle;
+	}
+
+	&_title {
+		color: $primary-color;
+		text-transform: uppercase;
+		text-align: center;
+	}
+}
+
+/* PAGE RECETTE */
+
+.recipe-title {
+	text-align: center;
+	padding: 70px 0 20px 0;
+    font-size: 50px;
+	}
+
+.color-bloc {
+	margin: auto;
+	width: 90%;
+	background-color: $third-color;
+	border-radius: 20px;
+	position: relative;
+	overflow: hidden;
+
+	&_recipe-image {
+		width: 400px;
+		border-radius: 20px;
+		position: relative;
+		top: 50px;
+		left: 50px;
+	}
+}
+
+.recipe-details {
+	background-color: $secondary-color;
+	width: 400px;
+	padding: 10px;
+	border: solid 2px $primary-color;
+	position: absolute;
+
 }

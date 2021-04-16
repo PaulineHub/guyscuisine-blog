@@ -55,7 +55,7 @@ nav {
   height: 50px;
   top: 0px;
   left: 0px;
-  z-index: 2;
+  z-index: 3;
 }
 nav ul {
   list-style-type: none;
@@ -156,7 +156,7 @@ nav ul li a:hover {
 /* Contact Section */
 .contact-section {
   text-align: center;
-  padding: 70px 10px;
+  padding: 70px 10px 30px 10px;
   width: 600px;
   display: flex;
   flex-direction: column;
@@ -194,7 +194,7 @@ nav ul li a:hover {
   outline: 0;
 }
 .contact-form_message {
-  width: 580px;
+  width: 570px;
   height: 100px;
   margin: 5px;
   border: solid 2px #000000;
@@ -210,6 +210,7 @@ footer {
   justify-content: space-between;
   padding: 5px 10px;
   font-size: 12px;
+  margin-top: 40px;
 }
 
 /* PAGE INDEX RECETTES */
@@ -260,15 +261,15 @@ footer {
 
 .color-bloc {
   margin: auto;
-  width: 90%;
+  width: 80%;
   background-color: #ffd350;
   border-radius: 20px;
   position: relative;
-  overflow: hidden;
+  display: flex;
+  padding-bottom: 80px;
 }
 .color-bloc_recipe-image {
   width: 400px;
-  border-radius: 20px;
   position: relative;
   top: 50px;
   left: 50px;
@@ -276,10 +277,11 @@ footer {
 
 .recipe-details {
   background-color: #ffffff;
-  width: 400px;
+  width: 50%;
   padding: 10px;
   border: solid 2px #000000;
-  position: absolute;
+  margin: 90px 40px 0 0;
+  z-index: 2;
 }
 
 /*# sourceMappingURL=style.css.map */

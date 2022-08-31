@@ -25,6 +25,70 @@ $paragraph-font: 'Montserrat', sans-serif;
 	overflow: hidden;
 }
 
+/* Keyframes */
+
+@keyframes run-p {
+	0% {
+		margin-left: -1000px;
+	}
+	80% {
+		margin-left: 100px;
+		transform: rotate(2deg);
+	}
+	90% {
+		margin-left: -10px;
+		transform: rotate(-5deg);
+	}
+	100% {
+		margin-left: 0px;
+	}
+}
+
+@keyframes run-title {
+	0% {
+		margin-left: -1000px;
+	}
+	80% {
+		margin-left: 150px;
+		transform: rotate(5deg);
+	}
+	90% {
+		margin-left: -10px;
+		transform: rotate(-5deg);
+	}
+	
+	100% {
+		margin-left: 0px;
+	}
+}
+
+@keyframes run-burger {
+	0% {
+		margin-left: -1000px;
+	}
+	80% {
+		margin-left: 220px;
+		transform: rotate(10deg);
+	}
+	90% {
+		margin-left: -20px;
+		transform: rotate(-5deg);
+	}
+	100% {
+		margin-left: 0px;
+	}
+}
+
+@keyframes shake {
+	25% {
+		transform: translateX(1%);
+	}
+	75% {
+		transform: translateX(1%*-1);
+	}
+}
+
+
 /* Elements principaux de la page */
 
 * {
@@ -72,7 +136,7 @@ a
 	transition: all 500ms;
 
 	&:hover {
-		transform: scale(0.9);
+		transform: scale(1.1);
 	}
 }
 
@@ -103,8 +167,8 @@ nav {
 
 			a {
 				color: $secondary-color;
-				border-bottom: 2px solid $primary-color;
-				padding: 15px;
+				border-bottom: 3px solid $primary-color;
+				padding: 14px;
 
 				&:hover {
 					border-color: $third-color;
@@ -130,7 +194,8 @@ nav {
 
 	img {
 		width: 150px;
-		margin: 20px;
+		margin-bottom: 20px;
+		animation: run-burger 1500ms cubic-bezier(.22,.08,.45,.81) forwards;
 	}
 
 	h1 {
@@ -139,6 +204,13 @@ nav {
 		text-align: center;
 		margin: 0px;
 		line-height: 1;
+		animation: run-title 1500ms cubic-bezier(.22,.08,.45,.81) forwards;
+		
+
+		/*&:hover {
+			transform: scale(1.1);
+			padding: 10px;
+		}*/
 	}
 
 	p {
@@ -146,6 +218,7 @@ nav {
 		font-size: 25px;
 		text-transform: uppercase;
 		font-weight: 900;
+		animation: run-p 1500ms cubic-bezier(.22,.08,.45,.81) forwards;
 	}
 }
 
@@ -159,7 +232,13 @@ nav {
 	h2 {
 		font-size: 60px;
 		text-align: center;
-		margin: 0px auto 60px auto;
+		margin: auto;
+	}
+
+	img._zigzagnoirsurjaune {
+		width: 200px;
+    	display: block;
+    	margin: 0 auto 60px auto;
 	}
 }
 
@@ -219,6 +298,10 @@ nav {
 	h2{
 		font-size: 50px;
 		margin: 0px;
+
+		&:hover {
+			animation: shake 200ms 3;
+		}
 	}
 
 	p{
@@ -277,11 +360,18 @@ footer {
 
 
 .recipes-title {
-	padding-top: 50px;
+	padding-top: 100px;
 
 	h1 {
 		text-align: center;
 		font-size: 60px;
+		margin: 0;
+	}
+
+	img._zigzagnoirsurblanc {
+		width: 190px;
+    	display: block;
+    	margin: 0 auto 60px auto;
 	}
 }
 
@@ -302,6 +392,14 @@ footer {
 	
 	margin-right: 40px;
 	overflow: visible;
+
+	&:hover &_image  {
+			border: 3px solid $third-color;	
+		}
+
+	&:hover &_title {
+			font-weight: bold;
+		}	
 
 	&_image {
 		
@@ -325,6 +423,7 @@ footer {
 	padding: 70px 0 20px 0;
     font-size: 50px;
 	}
+
 
 .color-bloc {
 	margin: auto;

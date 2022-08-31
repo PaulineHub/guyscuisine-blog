@@ -3,6 +3,63 @@
 /*white*/
 /*yellow*/
 /* Mixins */
+/* Keyframes */
+@keyframes run-p {
+  0% {
+    margin-left: -1000px;
+  }
+  80% {
+    margin-left: 100px;
+    transform: rotate(2deg);
+  }
+  90% {
+    margin-left: -10px;
+    transform: rotate(-5deg);
+  }
+  100% {
+    margin-left: 0px;
+  }
+}
+@keyframes run-title {
+  0% {
+    margin-left: -1000px;
+  }
+  80% {
+    margin-left: 150px;
+    transform: rotate(5deg);
+  }
+  90% {
+    margin-left: -10px;
+    transform: rotate(-5deg);
+  }
+  100% {
+    margin-left: 0px;
+  }
+}
+@keyframes run-burger {
+  0% {
+    margin-left: -1000px;
+  }
+  80% {
+    margin-left: 220px;
+    transform: rotate(10deg);
+  }
+  90% {
+    margin-left: -20px;
+    transform: rotate(-5deg);
+  }
+  100% {
+    margin-left: 0px;
+  }
+}
+@keyframes shake {
+  25% {
+    transform: translateX(1%);
+  }
+  75% {
+    transform: translateX(-1%);
+  }
+}
 /* Elements principaux de la page */
 * {
   box-sizing: border-box;
@@ -44,7 +101,7 @@ a {
   transition: all 500ms;
 }
 .button:hover {
-  transform: scale(0.9);
+  transform: scale(1.1);
 }
 
 /* Navigation bar */
@@ -72,8 +129,8 @@ nav ul li {
 }
 nav ul li a {
   color: #ffffff;
-  border-bottom: 2px solid #000000;
-  padding: 15px;
+  border-bottom: 3px solid #000000;
+  padding: 14px;
 }
 nav ul li a:hover {
   border-color: #ffd350;
@@ -90,7 +147,8 @@ nav ul li a:hover {
 }
 .welcome-section img {
   width: 150px;
-  margin: 20px;
+  margin-bottom: 20px;
+  animation: run-burger 1500ms cubic-bezier(0.22, 0.08, 0.45, 0.81) forwards;
 }
 .welcome-section h1 {
   font-size: 80px;
@@ -98,12 +156,18 @@ nav ul li a:hover {
   text-align: center;
   margin: 0px;
   line-height: 1;
+  animation: run-title 1500ms cubic-bezier(0.22, 0.08, 0.45, 0.81) forwards;
+  /*&:hover {
+  	transform: scale(1.1);
+  	padding: 10px;
+  }*/
 }
 .welcome-section p {
   color: #ffd350;
   font-size: 25px;
   text-transform: uppercase;
   font-weight: 900;
+  animation: run-p 1500ms cubic-bezier(0.22, 0.08, 0.45, 0.81) forwards;
 }
 
 /* Recipes Section */
@@ -114,7 +178,12 @@ nav ul li a:hover {
 .recipes-section h2 {
   font-size: 60px;
   text-align: center;
-  margin: 0px auto 60px auto;
+  margin: auto;
+}
+.recipes-section img._zigzagnoirsurjaune {
+  width: 200px;
+  display: block;
+  margin: 0 auto 60px auto;
 }
 
 .categories-box {
@@ -166,6 +235,9 @@ nav ul li a:hover {
   font-size: 50px;
   margin: 0px;
 }
+.contact-section h2:hover {
+  animation: shake 200ms 3;
+}
 .contact-section p {
   padding: 5px;
 }
@@ -215,11 +287,17 @@ footer {
 
 /* PAGE INDEX RECETTES */
 .recipes-title {
-  padding-top: 50px;
+  padding-top: 100px;
 }
 .recipes-title h1 {
   text-align: center;
   font-size: 60px;
+  margin: 0;
+}
+.recipes-title img._zigzagnoirsurblanc {
+  width: 190px;
+  display: block;
+  margin: 0 auto 60px auto;
 }
 
 .recipes-index {
@@ -236,6 +314,12 @@ footer {
 .recipe-preview {
   margin-right: 40px;
   overflow: visible;
+}
+.recipe-preview:hover .recipe-preview_image {
+  border: 3px solid #ffd350;
+}
+.recipe-preview:hover .recipe-preview_title {
+  font-weight: bold;
 }
 .recipe-preview_image {
   width: 100%;
